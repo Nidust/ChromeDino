@@ -395,11 +395,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831c1782008223f49bc83d9dd1a4f109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 3
+  startSpawnTime: 1
+  endSpawnTime: 3
   spawnList:
-  - {fileID: 3793841260020728300, guid: a2532b4cbec0ae046b2c7b91c6326f67, type: 3}
-  - {fileID: 7124543836868192301, guid: 778763e03f5f0b4499a77fe44daabb1e, type: 3}
-  - {fileID: 3730361784428013688, guid: 127b16c24849a854690220201e5a9c96, type: 3}
+  - {fileID: 6623170529182906707, guid: 750eb263b86602e499f871b418c6ca26, type: 3}
 --- !u!1 &1227174892
 GameObject:
   m_ObjectHideFlags: 0
