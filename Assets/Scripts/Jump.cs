@@ -15,10 +15,12 @@ public class Jump : MonoBehaviour
     private float jumpTime = 0.0f;
 
     private Rigidbody2D rigidBody;
+    private Animator animator;
 
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class Jump : MonoBehaviour
 
     private void JumpStart()
     {
-        isFly = true;
+        SetFly(true);
         isJumping = true;
         jumpTime = 0.0f;
     }
@@ -65,12 +67,18 @@ public class Jump : MonoBehaviour
         return Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.UpArrow);
     }
 
+    private void SetFly(bool fly)
+    {
+        isFly = fly;
+        animator.SetBool("IsFly", fly);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject gameObject = collision.gameObject;
         if (gameObject.CompareTag("Ground"))
         {
-            isFly = false;
+            SetFly(false);
         }
     }
 }
