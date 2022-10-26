@@ -38,7 +38,9 @@ public class Jump : MonoBehaviour
         }
         else
         {
-            if (isFly == false && JumpKeyDown())
+            bool isSliding = animator.GetBool("IsCrouch");
+
+            if (isSliding == false && isFly == false && JumpKeyDown())
             {
                 JumpStart();
             }
